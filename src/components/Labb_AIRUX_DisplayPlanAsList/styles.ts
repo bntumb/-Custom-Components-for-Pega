@@ -4,7 +4,7 @@ export const StyledTaskList = styled.div(() => {
   return css`
     display: flex;
     flex-direction: column;
-    gap: 16px; // space between stacked plans
+    gap: 16px;
     width: 100%;
 
     .plan-accordion {

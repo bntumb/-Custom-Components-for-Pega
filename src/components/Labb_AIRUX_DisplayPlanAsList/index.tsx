@@ -3,9 +3,7 @@ import { useState, useMemo } from 'react';
 import { StyledTaskList } from './styles';
 import { ChevronRight } from 'lucide-react';
 
-// ---------------------------------------------------------------------------
-// Constants and helpers
-// ---------------------------------------------------------------------------
+
 const DETAIL_FIELDS: string[] = [
   'ConfidenceScore',
   'RelevantIssueTextSegmentConfidence',
@@ -40,9 +38,7 @@ const FIELD_LABELS: Record<string, string> = {
 const toLabel = (key: string) =>
   FIELD_LABELS[key] ?? key.replace(/([A-Z])/g, ' $1').trim();
 
-// ---------------------------------------------------------------------------
-// CollapsibleField
-// ---------------------------------------------------------------------------
+
 const CollapsibleField = ({ label, value, defaultOpen = false }: any) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const displayValue =
@@ -68,9 +64,7 @@ const CollapsibleField = ({ label, value, defaultOpen = false }: any) => {
   );
 };
 
-// ---------------------------------------------------------------------------
-// Render plain object fields
-// ---------------------------------------------------------------------------
+
 const ObjectFields = ({ obj }: { obj: Record<string, any> }) => {
   if (!obj) return null;
   return (
@@ -92,13 +86,10 @@ export default function LabbAiruxTemplate2222(props: any) {
   const dataObject = getPConnect().getDataObject();
   const caseContent = dataObject.caseInfo.content;
 
-  // State: track which plan accordion is open
   const [openPlanIndex, setOpenPlanIndex] = useState<number | null>(null);
 
-  // State: track active topic tab per plan
   const [activeTopicTabs, setActiveTopicTabs] = useState<Record<number, number>>({});
 
-  // Gather plans: always include CurrentPlan first
   const plans = useMemo(() => {
     const arr: any[] = [];
     if (caseContent?.CurrentPlan)
