@@ -1,0 +1,27 @@
+{
+  "name": "Bs_DX_EventsTimeLine",
+  "label": "DXEventTimeline",
+  "description": "EventsTimeLine",
+  "organization": "BS",
+  "version": "1.0.0",
+  "library": "a",
+  "allowedApplications": [],
+  "componentKey": "Bs_DX_EventsTimeLine",
+  "type": "Widget",
+  "subtype": "CASE",
+  "icon": "OneColumnPage.svg",
+  "properties": [
+   {
+      "name": "label",
+      "label": "Label value",
+      "format": "TEXT"
+    }
+  ],
+  "defaultConfig":
+  {
+     "label": "@L EventTimeline",
+     "referenceList": "D_TimeLineByCaseIDList",
+    "toggleFieldVisibility": true,
+    "caseTypeReference": "BS-Collections-Work-Enforcement"
+  }
+}
